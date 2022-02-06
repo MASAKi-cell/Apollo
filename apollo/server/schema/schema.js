@@ -43,6 +43,23 @@ const typeDefs = gql`
     SMALL
     LARGE
   }
+
+  # 旅行を予約またはキャンセル（エラーの場合は不可）
+  # TripUpdateResponseを返す
+  type Mutation {
+    bookTrip(launchIds: [ID]!): TripUpdateResponse!
+    cancelTrip(launchId: ID!): TripUpdateResponse!
+    login(email: String): String
+  }
+
+  # レスポンスが成功/失敗の状態、message、変更対象のlaunchを返す
+  type TripUpdateResponse {
+      success: Boolean!
+      message: String
+      launches: [Launch]
+  }
+
+
 `;
 
 modules.exports = typeDefs;
