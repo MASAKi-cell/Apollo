@@ -58,7 +58,11 @@ const typeDefs = gql`
       message: String
       launches: [Launch]
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> refs/remotes/origin/main
 `;
 
 module.exports = typeDefs;
